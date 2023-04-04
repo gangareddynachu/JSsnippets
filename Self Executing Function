@@ -35,3 +35,26 @@ const getFileStream = async(url) =>{
         console.log({chunk});
     }
 })();
+
+
+for(var i=0;i<2;i++){
+    const button = document.createElement("button");
+    button.innerText = `Button ${i}`;
+    button.onClick = function (){
+        console.log(i);
+    }
+    document.body.appendChild(button);
+}
+console.log(i)
+//Both buttons with give i=2 since it is global variable
+
+//we can use let in place of var here or use IIFE
+for(var i=0;i<2;i++){
+    const button = document.createElement("button");
+    button.innerText = `Button ${i}`;
+    button.onClick = (function (copyofI){
+        console.log(i);
+    })(i);
+    document.body.appendChild(button);
+}
+console.log(i)
