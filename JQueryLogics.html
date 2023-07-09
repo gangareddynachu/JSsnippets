@@ -98,3 +98,58 @@
 });
 		</script>
 </html>
+
+
+****************************
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+</head>
+<body>
+<p1>**********Add Items*************</p1>
+<ul>
+  <li>One</li>
+  <li>Two</li>
+  <li>Three</li>
+  <li id='four'>Four</li>
+</ul>
+<div id="newItemButton">
+<button href='#' id='showForm'>New Item</button>
+</div>
+<form id="newItemForm">
+	<input type="text" id="itemDescription" placeholder="Add description...."/>
+	<input type="submit" id="addButton" value="add"/>
+</form>
+<script>
+$(document).ready(function(){
+  var $newItemButton = $('#newItemButton');
+  var $newItemForm = $('#newItemForm');
+  var $textInput = $('input:text');
+
+  $newItemButton.show();
+  $newItemForm.hide();
+
+  $('#showForm').on('click',function(){
+	  $newItemButton.hide();
+       $newItemForm.show();
+
+  })
+
+  $newItemForm.on('submit',function(e){
+	  e.preventDefault();
+	  var newText = $textInput.val();
+	  $('li:last').after('<li>'+ newText+'</li>');
+	  $newItemForm.hide();
+	  $newItemButton.show();
+	  $textInput.val('');
+	  
+  })
+
+
+
+});
+</script>
+</body>
+</html>
