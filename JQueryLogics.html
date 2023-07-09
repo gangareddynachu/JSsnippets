@@ -178,7 +178,12 @@ $(document).ready(function(){
   
   var $moveItem = $('#one').detach();
   $moveItem.appendTo('ul');
-
+//BOX DIMENSIONS
+	   var bodyHeight = $('body').height();
+	 $('ul').append('<p>Body Height is :'+bodyHeight+ '</p>');
+	 $('li').width('50%');
+	 $('li#one').width(125);
+	 $('li#two').width('75%');
 
 });
 </script>
