@@ -153,3 +153,34 @@ $(document).ready(function(){
 </script>
 </body>
 </html>
+
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+</head>
+<body>
+<h1>**********CUT COPY PASTE ELEMENTS*************</h1>
+<ul>
+  <li id ='one'>One</li>
+  <li>Two</li>
+  <li>Three</li>
+  <li id='four'>Four</li>
+</ul>
+<p>Placed initially after List Items</p>
+<script>
+$(document).ready(function(){
+  var $p = $('p');
+  var $CloneText = $p.clone();
+  $p.remove();
+  $CloneText.insertAfter('h1');
+  
+  var $moveItem = $('#one').detach();
+  $moveItem.appendTo('ul');
+
+
+});
+</script>
+</body>
+</html>
