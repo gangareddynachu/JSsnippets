@@ -27,3 +27,29 @@
 });
 		</script>
 </html>
+<!-- Additional parameters for on method: -->
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Page Title</title>
+		 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+	</head>
+	<body>
+		<p id='notes'>heeee</p>
+		<ul>
+			<li>One</li>
+			<li>Two</li>
+			<li>Three</li>
+			<li id='four'>Four</li>
+			
+	    </ul>
+    <script>
+		 $(function(){
+			 $('ul').on('click mouseover',':not(#four)',{status:'additional'},function(e){
+                    $('#notes').html('<span>'+e.target.textContent+ '<br/>'+ e.data.status+'</span>');
+					console.log('hello');
+			 })
+
+});
+		</script>
+</html>
