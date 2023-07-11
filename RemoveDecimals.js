@@ -15,3 +15,6 @@ console.log(6.888>>0);
 
 //leftshift
 console.log(4.22222<<0);
+
+console.log(Math.ceil(5.6))
+console.log(Math.floor(6.2)) 
