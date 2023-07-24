@@ -114,3 +114,36 @@ const fn = (a,b,c) => (a * b * c)
 const onceFn = once(fn);
 console.log(onceFn(5, 7, 4)); // 140
 
+*******************************
+function memoize(fn) {
+    let map1 = new Map();
+
+    return function(...args) {
+        const key = JSON.stringify(args);
+
+        if(map1.has(key)){
+            return map1.get(key);
+        }
+        const result = fn(...args);
+        map1.set(key,result);
+        return result;
+        
+    }
+}
+
+function memoize(fn){
+
+    const cache={};
+    
+    return function(...args){
+        const key = JSON.stringify(args);
+        if(cache.hasOwnProperty(key)){
+            return cache[key];
+        }
+        const result=fn(...args);
+        cache[key]= result;
+        return result;
+
+    }
+
+}
