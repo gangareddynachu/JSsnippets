@@ -98,5 +98,19 @@ program is generally broken up into lots of small chunks, which happen one after
 event loop queue. And technically, other events not related directly to your program can be interleaved within the queue as
 well.
 
-  
+ ********************************
+
+ var once = function(fn) {
+    let count=0;
+    return function(...args){
+        if(count==0){
+            count++;
+            return fn(...args);
+        }
+       return 
+    }
+};
+const fn = (a,b,c) => (a * b * c)
+const onceFn = once(fn);
+console.log(onceFn(5, 7, 4)); // 140
 
