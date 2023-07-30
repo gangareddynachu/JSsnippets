@@ -132,6 +132,295 @@ window.onload = function() {
     interval = setInterval(moveRight, 10);
 };
 
+//Handling Events
+
+var btn = document.getElementById("demo");
+btn.addEventListener("click", myFunction);
+
+function myFunction() {
+  alert(Math.random());
+  btn.removeEventListener("click", myFunction);
+}
+
+//Event Propagation
+
+Bubbling: innermost elements are handled first and then the outer elements event is handled
+Capturing: outermost elements are handled first and then the inner elemenst event is handled
+
+Capturing goes down the DOM.
+Bubbling goes up the DOM.
+
+addEventListener(event, function, useCapture)
+//Capturing propagation
+elem1.addEventListener("click", myFunction, true); 
+
+//Bubbling propagation
+elem2.addEventListener("click", myFunction, false);
+
+
+
+ES6:
+
+Ecmascript is scripting language specification created to standardize javascript
+Adds new syntax for writing 
+complex applications/
+classes/modules/iterators 
+and for/of loops , 
+generators , 
+arrow functions
+binary data
+typed arrays
+collections(maps,sets,weak maps)
+promises
+number
+math enhancements
+reflection
+proxies
+
+let is not subject to Variable Hoisting, which means that let declarations do not move to the top of the current execution context.
+const is not subject to Variable Hoisting too, which means that const declarations do not move to the top of the current execution context.
+
+
+//Template Literal
+
+let msg = `The sum is ${a+b}`;
+
+//Loops and Functions in ES6
+The for...in loop should NOT be used to iterate over arrays because, depending on the JavaScript engine, it could iterate in an arbitrary order. Also, the iterating variable is a string, not a number, so if you try to do any math with the variable, you'll be performing string concatenation instead of addition.
+
+let list = ["x", "y", "z"];
+for (let val of list) {
+  console.log(val);
+}
+
+
+// Functions in ES6
+
+const greet = x => "Welcome " + x;
+const add = (x, y) => {
+  let sum = x + y;  
+  console.log(sum);
+}
+const x = () => alert("Hi");
+
+//Default Parameters in ES6 
+function test(a, b = 3, c = 42) {
+  return a + b + c;
+}
+console.log(test(5)); //50
+
+ES6 objects:
+
+//function shorthand
+let tree={
+    height:10,
+    grow(){
+        this.height=20;
+    }
+}
+
+//property value shorthand
+let height = 5;
+let health = 100;
+
+let athlete = {
+  height,
+  health
+};
+
+//When creating an object by using duplicate property names, the last property will overwrite the prior ones of the same name.
+  var a = {x: 1, x: 2, x: 3, x: 4};
+console.log(a.x) //4
+//Duplicate property names generated a SyntaxError in ES5 when using strict mode. However, ES6 removed this limitation.
+
+//Computed Property Names 
+
+//using square bracket notation
+
+let prop = 'name';
+let id='1234';
+let mobile='08923';
+
+let user={
+  [prop]:'Jack',
+  [`user_${id}`]:`${mobile}`
+}
+console.log(user.name);
+
+//Object.assign() in ES6
+
+ES6 adds a new Object method assign() that allows us to combine multiple sources into one target to create a single new object
+Object.assign() is also useful for creating a duplicate of an existing object.
+
+let person ={
+    name:'abc'
+}
+let newperson = person
+newperson.name='def';
+
+console.log(person.name); //def
+console.log(newperson.name); //def
+
+
+let newp1 = Object.assign({},person);
+newp1.name="xyz";
+console.log(person.name); //def
+console.log(newp1.name); //xyz
+
+
+let person = {
+  name: 'Jack',
+  age: 18
+};
+
+let newPerson = Object.assign({}, person, {name: 'Bob'});
+
+
+//Array Destructuring in ES6 
+
+let arr=['a','b','c']
+let [one,two,three] = arr;
+
+console.log(one) //a
+
+
+let a = () => {
+    return [1, 3, 2];
+};
+
+let [one, , two] = a();
+
+console.log(one); // 1
+console.log(two); // 2
+
+//The destructuring syntax also simplifies assignment and swapping values:
+let a, b, c = 4, d = 8;
+[a, b = 6] = [2]; // a = 2, b = 6
+[c, d] = [d, c]; // c = 8, d = 4
+
+//Object Destructuring in ES6 
+
+let obj = {h:100, s: true};
+let {h, s} = obj;
+
+console.log(h); // 100
+console.log(s); // true
+
+let obj = {h:100, s: true};
+let {h, s} = obj;
+
+console.log(h); // 100
+console.log(s); // true
+
+({a,b} = {a:'Hello',b:'Jack'}); //assign without declaration
+console.log(a+b);
+
+
+
+var obj = {id: 42, name: "Jack"};
+
+let {id = 10, age = 20} = obj;
+let {id:idcustom,name:namecustom} = obj
+
+console.log(id); // 42
+console.log(age); // 20
+
+console.log(idcustom); //42
+
+//ES6 Rest Parameters
+
+before
+function containsAll(arr) {
+  for (let k = 1; k < arguments.length; k++) {
+    let num = arguments[k];
+    if (arr.indexOf(num) === -1) {
+      return false;
+    }
+  }
+  return true;
+}
+let x = [2, 4, 6, 7];
+console.log(containsAll(x, 2, 4, 7));
+console.log(containsAll(x, 6, 4, 9));
+
+after
+
+function containsAll(arr, ...nums) {
+  for (let num of nums) {
+    if (arr.indexOf(num) === -1) {
+      return false;
+    }
+  }
+  return true;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
