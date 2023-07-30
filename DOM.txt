@@ -1,0 +1,138 @@
+
+//Document Object Model
+
+The browser build DOM of that page which is an object oriented model of its logical structure
+DOM of an HTML document can be represented as nested set of boxes
+
+HTML elements become interrelated nodes in tree
+Nodes can have child nodes
+Nodes on the same tree level are called siblings
+
+//The document Object
+
+predefined document object in JS,used to access all elements on the DOM
+document object is the root of all nodes on webpage
+
+document.body.innerHTML = "Some text";
+As the body is an element of the DOM, we can access it using the document object and change the content of the innerHTML property.
+
+  
+//******Selecting Elements
+//finds element by id
+document.getElementById(id)
+
+//finds elements by class name
+document.getElementsByClassName(name)
+
+//finds elements by tag name
+document.getElementsByTagName(name)
+
+
+//Changing Attributes
+var el = document.getElementById("myimg");
+el.src = "apple.png";
+
+var el = document.getElementsByTagName("a");
+el[0].href = "http://www.sololearn.com";
+
+//Changing Style
+var x = document.getElementById("demo");
+x.style.color = "6600FF"
+All CSS properties can be set and modified using JavaScript. Just remember, that you cannot use dashes (-) in the property names: these are replaced with camelCase versions, where the compound words begin with a capital letter.
+For example, the background-color property should be referred to as backgroundColor.
+
+//Creating Elements
+
+//element.cloneNode() clones an element and returns the resulting node
+//document.createElement(element) creates a new element node.
+//document.createTextNode(text) creates a new text node.
+  //creating a new paragraph
+  var p = document.createElement("p");
+  var node = document.createTextNode("Some new text");
+  //adding the text to the paragraph
+  p.appendChild(node);
+
+  var div = document.getElementById("demo");
+  //adding the paragraph to the div
+  div.appendChild(p);
+
+//Removing Elements
+
+To remove an HTML element, you must select the parent of the element and use the removeChild(node) method
+var parent = document.getElementById("demo");
+var child = document.getElementById("p1");
+parent.removeChild(child);
+
+//other way
+var child = document.getElementById("p1");
+child.parentNode.removeChild(child);
+
+//Replacing Elements
+
+var p = document.createElement("p");
+var node = document.createTextNode("This is new");
+p.appendChild(node);
+
+var parent = document.getElementById("demo");
+var child = document.getElementById("p1");
+parent.replaceChild(p, child);
+
+
+
+//Animation:
+
+window.onload = function() {
+    var pos = 0;
+    // Our box element
+    var box = document.getElementById('box');
+
+    var interval;
+
+    function moveRight() {
+        if (pos >= 150) {
+            clearInterval(interval);
+            interval = setInterval(moveDown, 10);
+        } else {
+            pos += 1;
+            box.style.left = pos + 'px';
+        }
+    }
+
+    function moveDown() {
+        if (pos >= 150) {
+            clearInterval(interval);
+            interval = setInterval(moveUp, 10);
+        } else {
+            pos += 1;
+            box.style.top = pos + 'px';
+        }
+    }
+
+    function moveUp() {
+        if (pos <= 0) {
+            clearInterval(interval);
+            interval = setInterval(moveLeft, 10);
+        } else {
+            pos -= 1;
+            box.style.top = pos + 'px';
+        }
+    }
+
+    function moveLeft() {
+        if (pos <= 0) {
+            clearInterval(interval);
+            interval = setInterval(moveRight, 10);
+        } else {
+            pos -= 1;
+            box.style.left = pos + 'px';
+        }
+    }
+
+    // Start the animation by moving right
+    interval = setInterval(moveRight, 10);
+};
+
+
+
+
+
