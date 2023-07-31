@@ -4,3 +4,7 @@ git branch | grep "scratch/DEF" | xargs git branch -D
 git branch: This command lists all the branches in the current Git repository.
 grep "scratch/DEF": This filters the output of the git branch command and selects only the branches that contain the string "scratch/DEF" in their names.
 xargs git branch -D: This takes the output from the previous grep command and deletes the selected branches using the git branch -D command.
+
+git branch | grep -v "scratch/DEF" | xargs git branch -D
+-v is the invert which means it will result in all other branches which do not mmatch the pattern.
+
