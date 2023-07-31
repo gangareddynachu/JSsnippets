@@ -356,13 +356,82 @@ function containsAll(arr, ...nums) {
 
 
 
+//Iterators and Generators:
+
+Symbol.iterator is the default iterator for the object
+The for ..of loop is based on this iterator
 
 
+let myIterableObj = { 
+  [Symbol.iterator] : function* () {
+    yield 1; yield 2; yield 3;
+...
+console.log([...myIterableObj]);
 
 
+First, we create an object, and use the Symbol.iterator and generator function to fill it with some values.
+In the second line of the code, we use a * with the function keyword. It's called a generator function (or gen function).
 
 
+function * idMaker(){
+  let index=0;
+  while(index<5){
+    yield index++;
+  }
+}
+  var gen = idMaker();
 
+gen.next().value;  //0
+gen.next().value;  //1
+
+//We can exit and re-enter generator funcitons later.Their variable bindings will be saved across the re-entrances.
+    They are very powerful tool for asynchronous programming especially when combined with promises They can be useful for creating loops with special requirements
+
+
+const arr = ['0', '1', '4', 'a', '9', 'c', '16'];
+const my_obj = {
+  [Symbol.iterator]: function*() {
+    for(let index of arr) {
+      yield `${index}`;
+    }
+  }
+}; //0 1 2 3 4 
+
+const all = [...my_obj] /* Here you can replace the '[...my_obj]' with 'arr'. */
+  .map(i => parseInt(i, 10))
+  .map(Math.sqrt)
+  .filter((i) => i < 4) /* try changing the value of 5 to 4 see what happens.*/
+  .reduce((i, d) => i + d); /* comment this line while you are changing the value of the line above */
+
+console.log(all);
+
+
+//Modules
+
+  Pros: maintainability | namespacing=> vars are declared globally which can make namespace polluted as unrelated variables are accessed all over our code
+    |Modules solve this problem by creating private space for variables
+
+    reusability: 
+    
+
+    Some functions
+
+    let arr = [1,2,3,4,5,6,7,8];
+let arr1 = ["abc","def","cfg"];
+
+console.log(arr.filter(x=>x>5));
+console.log(arr.find(x=> x>3))
+console.log(arr.findIndex(x=>x>3))
+console.log(Array(3+1).join("foo"));
+console.log("foo".repeat(3))
+
+console.log("Hello".startsWith("He",0))
+console.log("Hello".endsWith("He",2))
+"SoloLearn".startsWith("Solo", 0); // true
+"SoloLearn".endsWith("Solo", 4); // true
+"SoloLearn".includes("loLe"); // true
+"SoloLearn".includes("olo", 1); // true
+"SoloLearn".includes("olo", 2); // false
 
 
 
