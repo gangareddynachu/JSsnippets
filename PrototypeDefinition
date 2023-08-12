@@ -1,0 +1,125 @@
+const myDate = new Date();
+let object = myDate;
+
+do{
+object = Object.getPrototypeOf(object);
+console.log(object);
+
+}while(object);
+
+// Date.prototype
+// Object { }
+// null
+
+Output first it logs : Date.prototype and the prototype of that is Object.prototype and prototype of object.prototype is null.
+
+
+  //Setting a prototype
+
+  We can use Object.create() method
+
+const personPrototype = {
+  greet() {
+    console.log("hello!");
+  },
+};
+
+//Using Contructor
+const PersonPrototype = {
+
+  greet(){
+    console.log(`hello ${this.name}`);
+  }
+
+};
+
+function Person(name){
+  this.name = name;
+}
+Object.assign(Person.prototype,PersonPrototype);
+
+const person1 = new Person("Gangareddy");
+person1.greet(); // hello Gangareddy
+//OwnProperties
+console.log(Object.hasOwn(person1,"name"));  //true
+console.log(Object.hasOwn(person1,"greet"));  //false
+
+/********
+The Object.assign() static method copies all enumerable own properties from one or more source objects to a target object. It returns the modified target object.
+const target = { a: 1, b: 2 };
+const source = { b: 4, c: 5 };
+
+const returnedTarget = Object.assign(target, source);
+
+console.log(target);
+// Expected output: Object { a: 1, b: 4, c: 5 }
+
+console.log(returnedTarget === target);
+// Expected output: true
+
+const target  = {a:1,b:2}
+const source = {a:4,b:6,c:5}
+
+Object.assign(target,source);
+
+console.log("Target"+ JSON.stringify(target)) //{"a":4,"b":6,"c":5}
+console.log("Source"+ JSON.stringify(source)) //{"a":4,"b":6,"c":5}
+//If same properties are there then source will override them and add any missing properties to target
+
+const obj ={a:1}
+const copy = Object.assign({},obj);
+console.log(copy); //{ a: 1 }
+
+
+
+const obj1 = {a:1};
+const obj2 = {a:obj1};
+const obj3 = Object.assign({},obj2);
+console.log(obj3); //{ a: { a: 1 } }
+obj1.a = 33;
+console.log(obj3); //{ a: { a: 33 } }
+
+// Deep copy will not happen here , when we change the child object the parent object is also getting changes, the properties of parent and child are still pointing to the same
+
+//A deep copy is a copy whose properties do not share the same reference (point to the same underlying values) as those of the source object from which the copy was made,As as result,when you change either the source or copy you can be assured your are not causing the chanhes to source or copy that you don't expect.
+
+
+const obj4 = structuredClone(obj2);
+console.log(obj4); //{ a: { a: 33 } }
+obj1.a=44;
+console.log(obj4); //{ a: { a: 33 } }
+
+*********/
+or
+Person.prototype = personPrototype.greet;
+
+Here we create:
+
+an object personPrototype, which has a greet() method
+a Person() constructor function which initializes the name of the person to create.
+We then put the methods defined in personPrototype onto the Person function's prototype property using Object.assign.
+
+
+********The prototype of myDate is called Date.prototype: it's the prototype property of the Date constructor.
+
+/*************************/
+
+
+Array.prototype.last = function() {
+    console.log(this);
+    if(this.length<=0){
+        return -1;
+    }else{
+        return this[this.length-1]
+    }
+ 
+};
+
+//The last method has access to this because arr is extending Array.prototype and we are adding new function to the Array.protype, so all  objects
+//which are arrays can use this method.
+
+/**
+ * const arr = [1, 2, 3]; //extends Array Object // which extends Array.prototype 
+ * arr.last(); // 3
+ */
+
