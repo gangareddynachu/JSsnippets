@@ -6,6 +6,10 @@ console.log(Math.trunc(decimal)); //4
 
 //DoubleNot Operator
 console.log(~~4.51222); //4
+Bitwise operation like left shifting on a decimal number.
+Javascript implicitly converts that decimal number into an interger before applying bitwise operation.
+4.22222 is implicitly converted to the integer 4 (truncating the decimal part).
+The bitwise left shift operation 4 << 0 is effectively a no-op, as shifting by 0 positions doesn't change the value.
 
 //Bitwise Operator
 console.log(5.32|0); //5
