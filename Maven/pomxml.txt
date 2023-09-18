@@ -1,0 +1,11 @@
+Maven project helps us to manage the external dependencies in easy way. Just upgrade the versions to get the latest code
+Maven project project structure has pom.xml file created at the start
+It is the place where we define dependencies and plugins
+1)dependencies: specify them under <dependencies> tag. They are used in the source code and are mostly defined jar files
+  As soon as project is created a local mvn repository is created and for the first time we run mvn clean install command it will download the dependencies from mvnrepository.com and puts them in local mvn repo
+  From next time when we run the command, it will refere to local mvn repository
+2)plugins: plugins are defined under <plugins> tag 
+  project related configuration like compile whole project (maven-compile plugin) / run whole project(maven-surefire plugin) / package the whole app / start and stop the server = inshort it will control entire file
+
+  
+  
