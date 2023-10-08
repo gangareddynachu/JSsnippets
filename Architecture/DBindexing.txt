@@ -1,0 +1,13 @@
+Adding an index to the primary database => creating an index on specific column or columns of a table within the primary database
+An index is the data structure that improves the speed of retrieval operations on a table => but with cost of additional storage space and decreased performace on data modification queries like insert/update/delete since they have to update
+all the indexes which can slower the query execution
+
+
+CREATE INDEX index_name
+ON table_name (column_name);
+
+CREATE INDEX idx_username
+ON users (username);
+
+The indexing can be useful for columns frequently used in WHERE clauses of SQL queries, as it significantly reduces the time it takes to execute those queries.
+
