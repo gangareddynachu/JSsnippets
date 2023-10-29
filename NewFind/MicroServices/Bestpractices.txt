@@ -1,0 +1,10 @@
+1) Seperate Data Store = Each microservice should have its own dedicted database. This ensures that services are decoupled and can evolve independently.
+
+2)Keep code at a similar level of maturity
+3) Seperate build for each microservice
+4) Single Responsibility
+5) Deploy into containers
+6) Treat servers as stateless
+7)Domain driven design
+8)Micro frontend
+9)Orchestrating microservices
