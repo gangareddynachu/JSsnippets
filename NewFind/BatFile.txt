@@ -1,0 +1,22 @@
+A .bat file is known as batch file, a script file used in the windows operating system
+
+The term batch refers to the processing of the set of commands automatically
+Batch files contain series of commands that are executed in sequencen when the file is run.
+
+Batch files are uses .bat file extension and are written in plain text
+They include commands like copying files, renaming files,running programs and performing other system tasks
+
+batch files are executed by the windows command prompt and they allow users to automate the tasks that would require manual input.
+
+@echo off
+echo Backup files
+xcopy C:\SourceFolder\*.* D:\BackupFolder /s /i
+
+*.* => indictates all the files in the specific folder
+xcopy=> extended copy
+/s => parameter of xcopy that tells the command to copy directories and subdirectories including empty ones.
+
+/i => This is a command that instrucst to assume that destination is a directory if multiple files are being copied.
+It prevents the command from prompting the user for confirmation if the destination is indeed a directory.
+
+
