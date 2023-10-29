@@ -128,4 +128,17 @@ class HelloWorld {
   This demonstrates implementation details of each shape class. This demonstrates the simplicity and flexiblity of the Factory Design Pattern allowing 
   for easy creation of objects without exposing the instantiation logic to the client.
 
+
+
+  Factory Design Pattern Advantages
+
+
+  1) It provides approach to code for interface rather than implementation
+  2)It removes the instantiation of actual implementation classes from client code. Factory pattern makes our code robust,less coupled and eay to extend
+  3) It provides the abstraction between the implementation and client classes through inheritance
+
+  Factory Design Pattern Examples in JDK
+  1) java.util.Calendar, ResourceBundle and NumberFormat getInstance() methods uses Factory pattern.
+  2) valueOf() method in wrapper classes like Boolean,Integer ec
+
   */
