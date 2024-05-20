@@ -25,6 +25,30 @@ It works perfectly only if the severs are stateless, meaining the subsequent req
 
 
 
+DataCenters:
+1) can be provisioned in own compoanys; data center
+2) Cloud services like Amazon EC2/ Google compute engine/ Azure VM's)
+3) Fully managed serverless services(Lambda/kinesis/Athena)
+
+
+Scaling Database:
+
+1) Failover servers: Cold standby
+when database gows down => periodic backup of data => restore the data => send it to other (standby server)
+Some amount of downtime => as standby device needs to backup and restore data./ some amount of unbacked up data is lost
+
+
+2) Failover servers: Warm standby
+constantly copy data from primary DB to secondary DB (Replication)
+miminal downtime/less amount of data is lost.
+
+
+3) Failover servers: Hot standby
+Instead of relying on replication, wen servers instead write to all the databases simulatenously.
+
+
+
+
 
 
 
