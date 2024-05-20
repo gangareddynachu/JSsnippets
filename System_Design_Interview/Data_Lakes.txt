@@ -2,3 +2,5 @@ Throw data into text files(csv/json) into big distributed storage system like Am
 common approach for big data and unstructured data
 
 Another process ( Amazon Glue) creates a schema for that data.
+
+You still need to think about how to partition the raw data for best performance.
