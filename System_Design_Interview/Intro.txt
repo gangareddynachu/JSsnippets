@@ -1,0 +1,33 @@
+Software Design Principles:
+Insider tips for your system design interview from a former Amazon hiring manager – plus 6 mock interviews for practice!
+Scalability:
+
+Horizontal vs Vertical Scaling:
+
+Single Server Design: personal website (HTTP server, database)
+Disadvantages: Single point of failure
+
+We have to switch the DNS entry to point to new server incase of any failure
+
+To Solve, this
+We can seperate out the database
+
+Vertical Scaling:
+Add biger server instead of more severs
+servers only come large, but still have single point of failure, we still need to maintain servers
+
+Horizontal Scaling:
+
+muliptle severs, we have load balancer to distribute load between these servers
+when one of the host is down, LB can reroute the traffic automatically to the other servers, so that you have no downtime
+
+It works perfectly only if the severs are stateless, meaining the subsequent requests are not dependatn on the other servers response
+
+
+
+
+
+
+
+
+
