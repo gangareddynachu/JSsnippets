@@ -1,2 +1,4 @@
 Throw data into text files(csv/json) into big distributed storage system like Amazon S3, this approach is called data lake
 common approach for big data and unstructured data
+
+Another process ( Amazon Glue) creates a schema for that data.
