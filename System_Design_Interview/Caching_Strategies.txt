@@ -1,0 +1,7 @@
+LRU: Least Recently Used => Evict least recently used cache.. 
+
+maintian a hashmap for all of our keys.. and values contain the places where it is stored in the cache list (Double linked list).
+If existing key is accessed, it is moved to start of the list... 
+
+
+FIFO: First In First Out =>
