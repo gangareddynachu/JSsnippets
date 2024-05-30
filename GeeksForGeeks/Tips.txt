@@ -1,0 +1,38 @@
+********    Understand the problem:
+
+1) can I restate the problem in my own statement
+2) What are the inputs
+3) What are the outputs looks like .. what should be returned from the solution
+4) Can the outputs be determined from the inputs? In other words do I have enough info to solve the problem?
+5)) How should I label the important pieces of the data that are part of problem?
+
+*******   Explore Concrete Examples:
+
+examples help you understand problem better
+examples provide sanity checks that your eventual solution should work.
+
+Start with simple examples
+progress to make more complex examples
+explore examples with empty inputs
+explore examples with invalid inputs
+
+ ******   Break it down
+break down the problem into smaller steps
+
+
+***** Solve or Simplify
+simplify: find the core difficulty in what you are trying to do
+Temporarily ignore that difficulty
+write simplified solution kindof brute force
+Then incorporate that difficulty back in
+
+***** Look back and refactor
+can you check the result
+can you derive the result differently
+can you understand it glance?
+can you use result or method for some other problem?
+can you improve the performance of your solution?
+can you think of other ways to solve the refactor?
+How have other solved the problem?
+
+
