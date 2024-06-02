@@ -1,0 +1,17 @@
+Information Retriveval: Elastuvc Search Engine:
+
+Term Frequency (TF) just measures how often a word occcurs in a document
+Document Frequency (DF): how happn it appears over entire set of documents
+TF/DF = gives you how important and unique the word is for the document
+
+Page Rank: Searching the Web:
+Instead of relying on the contents of the oage so look at the page's backlinks
+and anchor text for those links
+
+A page with lot of inbound links means it might be very useful.
+The anchor texts on those links are treated as addditoonal keywords for the page.
+A given backlink is weighted from how many other links on the page it's coming from.
+Backlinks are links on other websites that point to your website. In the world of SEO (Search Engine Optimization), they’re like votes of credibility from other sites.
+
+
+
