@@ -2,8 +2,8 @@ Information Retriveval: Elastuvc Search Engine:
 
 Term Frequency (TF) just measures how often a word occcurs in a document
 
-Inverserse Document Frequency (IDF): how happn it appears over everywhere
+Document Frequency (DF): how happn it appears over entire set of documents
 
 
-TF/IDF = gives you how important and unique the word is for the document
+TF/DF = gives you how important and unique the word is for the document
 
