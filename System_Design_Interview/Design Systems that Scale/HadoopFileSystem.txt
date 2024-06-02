@@ -1,0 +1,11 @@
+Files are broken into blocks, replicated across your cluster.
+Replication is rack-ware.
+A master name node cordinates across all the operations
+
+Clients try to read from the nearest replica
+
+Writes gets replicated across different racks
+
+For high availability there may be 3 or more name nodes to fall back on. and hiighly available data store for  metadata.
+
+Metadata(name/replicas/locatons) <-name node <-client <-> |Rack1| DataNode-DataNode-DataNode |Rack1| <-> |Rack2| DataNode-DataNode |Rack2|

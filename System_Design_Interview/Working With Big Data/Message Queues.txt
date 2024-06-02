@@ -1,0 +1,10 @@
+Message Queues: Publisher Subscriber
+
+Publishers/Producers => msg| msg | msg => Subscribed Consumers
+
+Apache Spark:
+
+Map Reduce:
+Spark
+YARN: Yet Another Resource Negotiaition
+HDFS
