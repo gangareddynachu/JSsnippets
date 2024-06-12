@@ -19,8 +19,36 @@ The state is local data storage that is local to the component only and cannot b
 
 Props:
 
+The data that is passed from one component to another
+It is immutable, cannot be modifed
+Props can be used with state(Class) and functional components
+Props are read only
 
 State:
+
+The daata is passed within the compoennt only
+it is mutable
+It is only used in state/class compoennt before react v16 but now functional also supports using sttate varaibles
+state is booth read and write
+
+Q What is virtual DOM
+A React uses virtual DOM which is lighweight copy of actual DOM so for every object that exists in the DOM there is an object for that in React Virtual DOM
+It is same but it doesnt have power to directly change the DOM.
+changing DOM diectly is slow , but manipulating virtual DOM is fast as nothing gets drawn on the screen
+So each time there is change in the state of our application, virtual DOM gets updated first instead of real DOM
+
+Q What is JSX?
+A JSX is basically a syntax extension of javscript and is used to create React elements.These eleememts are then rendered to React DOM. All React components are 
+written in JSX. To embed any javascript expression in a piece of code written in JSX, we will have to wrap that extension in curly braches{}
+const name = "Learner";
+
+const element = (
+  <h1>
+    Hello,
+    {name}.Welcome to GeeksforGeeks.
+  </h1>
+);
+
 
     
 
