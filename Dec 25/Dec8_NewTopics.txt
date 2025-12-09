@@ -1,0 +1,57 @@
+Primitive types vs Non Primitive types:
+Primitive data types are the built-in data types provided by JavaScript. They represent single values and are not mutable
+    Number
+    String
+    Undefined
+    Boolean
+    Null
+    BigInt
+    Symbol
+
+Non Primitive data types also known as reference types are objects and derived data types, They can store collections of values or more complex entities
+    Object = An object in Javascript is an entity having properties and methods. Everything is an object in javascript.
+    Array = 2D arrays are not supported in JS. But we can create 2D array by creating array inside array.
+
+
+
+BigInt data type can represent numbers greater than 2^53-1 which helps to perform operations on large numbers.
+    The number is specified by writing 'n' at the end of the value
+    let bigNum = 123422222222222222222222222222222222222n
+    console.log(bigNum)
+
+Symbol data type is used to create objects which will be always unique
+    let sym = new Symbol("Hello");
+    console.log(typeof(sym)); //symbol
+    console.log(sym); //Symbol(Hello)
+
+    Symbols return unique identifiers that can be used to add unique keys to an object. It won't collide with any keys
+    They are used as object properties which cannot be recreated.
+    Syntax:
+    Symbol( optional_string )
+
+    <script>
+        let symbol1 = Symbol("Geeks")
+        let symbol2 = Symbol("Geeks")
+
+        // Each time Symbol() method 
+        // is used to create new global
+        // Symbol
+        console.log(symbol1 == symbol2); //False
+    </script>
+
+
+Two ways to check if it is an array or not 
+var abc = [2,3,4]
+console.log(Array.isArray(abc)) //true
+console.log(abc instanceof Array) //true
+
+************************************************************
+
+The process.exit() method is used to end the process which is running at the same time with an exit code in NodeJS. Syntax:
+
+process.exit( code )
+Parameter:  This function accepts single parameter as mentioned above and described below:
+
+Code: It can be either 0 or 1.
+ 0 means end the process without any kind of failure 
+ 1 means end the process with some failure.
